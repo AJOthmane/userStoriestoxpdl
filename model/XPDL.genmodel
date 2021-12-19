@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/Project_MDE__/src" modelPluginID="Project_MDE__"
+    modelName="XPDL" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="5.0" copyrightFields="false"
+    operationReflection="true" importOrganizing="true">
+  <foreignModel>XPDL.ecore</foreignModel>
+  <genPackages prefix="XPDL" disposableProviderFactory="true" ecorePackage="XPDL.ecore#/">
+    <genClasses image="false" ecoreClass="XPDL.ecore#//NamedElement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute XPDL.ecore#//NamedElement/name"/>
+    </genClasses>
+    <genClasses ecoreClass="XPDL.ecore#//Transition">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference XPDL.ecore#//Transition/from"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference XPDL.ecore#//Transition/to"/>
+    </genClasses>
+    <genClasses ecoreClass="XPDL.ecore#//ActivityXPDL">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute XPDL.ecore#//ActivityXPDL/id"/>
+    </genClasses>
+    <genClasses ecoreClass="XPDL.ecore#//process">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference XPDL.ecore#//process/activityxpdl"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference XPDL.ecore#//process/transition"/>
+    </genClasses>
+    <genClasses ecoreClass="XPDL.ecore#//Pool">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference XPDL.ecore#//Pool/process"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>
