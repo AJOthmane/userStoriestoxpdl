@@ -5,19 +5,23 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Transition" eSuperTypes="#//NamedElement">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="from" lowerBound="1" eType="#//ActivityXPDL"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="to" lowerBound="1" eType="#//ActivityXPDL"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="from" lowerBound="1" eType="#//Activity"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="to" lowerBound="1" eType="#//Activity"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ActivityXPDL" eSuperTypes="#//NamedElement">
+  <eClassifiers xsi:type="ecore:EClass" name="Activity" eSuperTypes="#//NamedElement">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="process" eSuperTypes="#//NamedElement">
+  <eClassifiers xsi:type="ecore:EClass" name="WorkflowProcess" eSuperTypes="#//NamedElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="activityxpdl" upperBound="-1"
-        eType="#//ActivityXPDL" containment="true"/>
+        eType="#//Activity" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="transition" upperBound="-1"
         eType="#//Transition" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Pool" eSuperTypes="#//NamedElement">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="process" eType="#//process"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="process" eType="#//WorkflowProcess"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="WorkflowProcesses" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="wp" lowerBound="1" upperBound="-1"
+        eType="#//WorkflowProcess"/>
   </eClassifiers>
 </ecore:EPackage>
